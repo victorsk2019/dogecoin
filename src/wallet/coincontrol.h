@@ -1,36 +1,74 @@
-// Copyright (c) 2011-2016 The Bitcoin Core developers
+// Copyright (c) 2011-2019 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_WALLET_COINCONTROL_H
 #define BITCOIN_WALLET_COINCONTROL_H
 
+<<<<<<< HEAD
 #include "primitives/transaction.h"
 #include "dogecoin-fees.h"
+=======
+#include <optional.h>
+#include <outputtype.h>
+#include <policy/feerate.h>
+#include <policy/fees.h>
+#include <primitives/transaction.h>
+#include <script/standard.h>
+
+const int DEFAULT_MIN_DEPTH = 0;
+const int DEFAULT_MAX_DEPTH = 9999999;
+
+//! Default for -avoidpartialspends
+static constexpr bool DEFAULT_AVOIDPARTIALSPENDS = false;
+>>>>>>> 1.21-dev
 
 /** Coin Control Features. */
 class CCoinControl
 {
 public:
+    //! Custom change destination, if not set an address is generated
     CTxDestination destChange;
+    //! Override the default change type if set, ignored if destChange is set
+    Optional<OutputType> m_change_type;
+    //! If false, only selected inputs are used
+    bool m_add_inputs;
     //! If false, allows unselected inputs, but requires all selected inputs be used
     bool fAllowOtherInputs;
-    //! Includes watch only addresses which match the ISMINE_WATCH_SOLVABLE criteria
+    //! Includes watch only addresses which are solvable
     bool fAllowWatchOnly;
-    //! Minimum absolute fee (not per kilobyte)
-    CAmount nMinimumTotalFee;
-    //! Override estimated feerate
+    //! Override automatic min/max checks on fee, m_feerate must be set if true
     bool fOverrideFeeRate;
+<<<<<<< HEAD
     //! Feerate to use if overrideFeeRate is true
     CFeeRate nFeeRate;
     //! Override the default transaction speed, 0 = use default
     FeeRatePreset nPriority;
+=======
+    //! Override the wallet's m_pay_tx_fee if set
+    Optional<CFeeRate> m_feerate;
+    //! Override the default confirmation target if set
+    Optional<unsigned int> m_confirm_target;
+    //! Override the wallet's m_signal_rbf if set
+    Optional<bool> m_signal_bip125_rbf;
+    //! Avoid partial use of funds sent to a given address
+    bool m_avoid_partial_spends;
+    //! Forbids inclusion of dirty (previously used) addresses
+    bool m_avoid_address_reuse;
+    //! Fee estimation mode to control arguments to estimateSmartFee
+    FeeEstimateMode m_fee_mode;
+    //! Minimum chain depth value for coin availability
+    int m_min_depth = DEFAULT_MIN_DEPTH;
+    //! Maximum chain depth value for coin availability
+    int m_max_depth = DEFAULT_MAX_DEPTH;
+>>>>>>> 1.21-dev
 
     CCoinControl()
     {
         SetNull();
     }
 
+<<<<<<< HEAD
     void SetNull()
     {
         destChange = CNoDestination();
@@ -42,6 +80,9 @@ public:
         fOverrideFeeRate = false;
         nPriority = MINIMUM;
     }
+=======
+    void SetNull();
+>>>>>>> 1.21-dev
 
     bool HasSelected() const
     {

@@ -6,27 +6,49 @@ bin_PROGRAMS += bench/bench_dogecoin
 BENCH_SRCDIR = bench
 BENCH_BINARY = bench/bench_dogecoin$(EXEEXT)
 
-RAW_TEST_FILES = \
-  bench/data/block413567.raw
-GENERATED_TEST_FILES = $(RAW_TEST_FILES:.raw=.raw.h)
+RAW_BENCH_FILES = \
+  bench/data/block41385.raw
+GENERATED_BENCH_FILES = $(RAW_BENCH_FILES:.raw=.raw.h)
 
 bench_bench_dogecoin_SOURCES = \
+<<<<<<< HEAD
+=======
+  $(RAW_BENCH_FILES) \
+  bench/addrman.cpp \
+>>>>>>> 1.21-dev
   bench/bench_bitcoin.cpp \
   bench/bench.cpp \
   bench/bench.h \
+  bench/block_assemble.cpp \
   bench/checkblock.cpp \
   bench/checkqueue.cpp \
-  bench/Examples.cpp \
+  bench/data.h \
+  bench/data.cpp \
+  bench/duplicate_inputs.cpp \
+  bench/examples.cpp \
   bench/rollingbloom.cpp \
+  bench/chacha20.cpp \
+  bench/chacha_poly_aead.cpp \
   bench/crypto_hash.cpp \
   bench/ccoins_caching.cpp \
+  bench/gcs_filter.cpp \
+  bench/hashpadding.cpp \
+  bench/merkle_root.cpp \
   bench/mempool_eviction.cpp \
+  bench/mempool_stress.cpp \
+  bench/nanobench.h \
+  bench/nanobench.cpp \
+  bench/rpc_blockchain.cpp \
+  bench/rpc_mempool.cpp \
+  bench/util_time.cpp \
   bench/verify_script.cpp \
   bench/base58.cpp \
+  bench/bech32.cpp \
   bench/lockedpool.cpp \
-  bench/perf.cpp \
-  bench/perf.h
+  bench/poly1305.cpp \
+  bench/prevector.cpp
 
+<<<<<<< HEAD
 nodist_bench_bench_dogecoin_SOURCES = $(GENERATED_TEST_FILES)
 
 bench_bench_dogecoin_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
@@ -37,41 +59,74 @@ bench_bench_dogecoin_LDADD = \
   $(LIBDOGECOIN_UTIL) \
   $(LIBDOGECOIN_CONSENSUS) \
   $(LIBDOGECOIN_CRYPTO) \
+=======
+nodist_bench_bench_dogecoin_SOURCES = $(GENERATED_BENCH_FILES)
+
+bench_bench_dogecoin_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
+bench_bench_dogecoin_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+bench_bench_dogecoin_LDADD = \
+  $(LIBBITCOIN_SERVER) \
+  $(LIBBITCOIN_WALLET) \
+  $(LIBBITCOIN_COMMON) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_CONSENSUS) \
+  $(LIBBITCOIN_CRYPTO) \
+  $(LIBTEST_UTIL) \
+>>>>>>> 1.21-dev
   $(LIBLEVELDB) \
+  $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1) \
-  $(LIBUNIVALUE)
+  $(LIBUNIVALUE) \
+  $(EVENT_PTHREADS_LIBS) \
+  $(EVENT_LIBS)
 
 if ENABLE_ZMQ
+<<<<<<< HEAD
 bench_bench_dogecoin_LDADD += $(LIBDOGECOIN_ZMQ) $(ZMQ_LIBS)
+=======
+bench_bench_dogecoin_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+>>>>>>> 1.21-dev
 endif
 
 if ENABLE_WALLET
 bench_bench_dogecoin_SOURCES += bench/coin_selection.cpp
+<<<<<<< HEAD
 bench_bench_dogecoin_LDADD += $(LIBDOGECOIN_WALLET) $(LIBDOGECOIN_CRYPTO)
 endif
 
 bench_bench_dogecoin_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 bench_bench_dogecoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+=======
+bench_bench_dogecoin_SOURCES += bench/wallet_balance.cpp
+endif
 
-CLEAN_BITCOIN_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_TEST_FILES)
+bench_bench_dogecoin_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(MINIUPNPC_LIBS) $(SQLITE_LIBS)
+bench_bench_dogecoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+>>>>>>> 1.21-dev
+
+CLEAN_BITCOIN_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
 
 CLEANFILES += $(CLEAN_BITCOIN_BENCH)
 
-bench/checkblock.cpp: bench/data/block413567.raw.h
+bench/data.cpp: bench/data/block41385.raw.h
 
 dogecoin_bench: $(BENCH_BINARY)
 
 bench: $(BENCH_BINARY) FORCE
 	$(BENCH_BINARY)
 
+<<<<<<< HEAD
 dogecoin_bench_clean : FORCE
+=======
+bitcoin_bench_clean : FORCE
+>>>>>>> 1.21-dev
 	rm -f $(CLEAN_BITCOIN_BENCH) $(bench_bench_dogecoin_OBJECTS) $(BENCH_BINARY)
 
 %.raw.h: %.raw
 	@$(MKDIR_P) $(@D)
 	@{ \
-	 echo "static unsigned const char $(*F)[] = {" && \
+	 echo "static unsigned const char $(*F)_raw[] = {" && \
 	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
 	 echo "};"; \
 	} > "$@.new" && mv -f "$@.new" "$@"

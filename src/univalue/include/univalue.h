@@ -14,6 +14,11 @@
 #include <map>
 #include <cassert>
 
+<<<<<<< HEAD
+=======
+#include <sstream>        // .get_int64()
+
+>>>>>>> 1.21-dev
 class UniValue {
 public:
     enum VType { VNULL, VOBJ, VARR, VSTR, VNUM, VBOOL, };
@@ -98,10 +103,13 @@ public:
         UniValue tmpVal(val_);
         return push_back(tmpVal);
     }
+<<<<<<< HEAD
     bool push_back(bool val_) {
         UniValue tmpVal(val_);
         return push_back(tmpVal);
     }
+=======
+>>>>>>> 1.21-dev
     bool push_back(int val_) {
         UniValue tmpVal(val_);
         return push_back(tmpVal);
@@ -131,7 +139,11 @@ public:
         return pushKV(key, tmpVal);
     }
     bool pushKV(const std::string& key, bool val_) {
+<<<<<<< HEAD
         UniValue tmpVal(val_);
+=======
+        UniValue tmpVal((bool)val_);
+>>>>>>> 1.21-dev
         return pushKV(key, tmpVal);
     }
     bool pushKV(const std::string& key, int val_) {

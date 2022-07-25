@@ -172,6 +172,23 @@ bool UniValue::findKey(const std::string& key, size_t& retIdx) const
             return true;
         }
     }
+<<<<<<< HEAD
+=======
+
+    return false;
+}
+
+bool UniValue::checkObject(const std::map<std::string,UniValue::VType>& t) const
+{
+    if (typ != VOBJ)
+        return false;
+
+    for (std::map<std::string,UniValue::VType>::const_iterator it = t.begin();
+         it != t.end(); ++it) {
+        size_t idx = 0;
+        if (!findKey(it->first, idx))
+            return false;
+>>>>>>> 1.21-dev
 
     return false;
 }

@@ -1,16 +1,26 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2016 The Bitcoin Core developers
+// Copyright (c) 2009-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_PRIMITIVES_BLOCK_H
 #define BITCOIN_PRIMITIVES_BLOCK_H
 
+<<<<<<< HEAD
 #include "auxpow.h"
 #include "primitives/transaction.h"
 #include "primitives/pureheader.h"
 #include "serialize.h"
 #include "uint256.h"
+=======
+#include <auxpow.h>
+#include <primitives/transaction.h>
+#include <primitives/pureheader.h>
+#include <serialize.h>
+#include <uint256.h>
+
+#include <memory>
+>>>>>>> 1.21-dev
 
 #include <boost/shared_ptr.hpp>
 
@@ -24,16 +34,25 @@
 class CBlockHeader : public CPureBlockHeader
 {
 public:
+<<<<<<< HEAD
     // auxpow (if this is a merge-minded block)
     boost::shared_ptr<CAuxPow> auxpow;
+=======
+
+    // auxpow (if this is a merge-minded block)
+    std::shared_ptr<CAuxPow> auxpow;
+>>>>>>> 1.21-dev
 
     CBlockHeader()
     {
         SetNull();
     }
 
-    ADD_SERIALIZE_METHODS;
+    SERIALIZE_METHODS(CBlockHeader, obj)
+    {
+        READWRITEAS(CPureBlockHeader, obj);
 
+<<<<<<< HEAD
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action) {
         READWRITE(*(CPureBlockHeader*)this);
@@ -46,6 +65,17 @@ public:
             READWRITE(*auxpow);
         } else if (ser_action.ForRead())
             auxpow.reset();
+=======
+        if (obj.IsAuxpow())
+        {
+            SER_READ(obj, obj.auxpow = std::make_shared<CAuxPow>());
+            assert(obj.auxpow != nullptr);
+            READWRITE(*obj.auxpow);
+        } else
+        {
+            SER_READ(obj, obj.auxpow.reset());
+        }
+>>>>>>> 1.21-dev
     }
 
     void SetNull()
@@ -57,9 +87,14 @@ public:
     /**
      * Set the block's auxpow (or unset it).  This takes care of updating
      * the version accordingly.
+<<<<<<< HEAD
      * @param apow Pointer to the auxpow to use or NULL.
      */
     void SetAuxpow(CAuxPow* apow);
+=======
+     */
+    void SetAuxpow (std::unique_ptr<CAuxPow> apow);
+>>>>>>> 1.21-dev
 };
 
 
@@ -80,15 +115,13 @@ public:
     CBlock(const CBlockHeader &header)
     {
         SetNull();
-        *((CBlockHeader*)this) = header;
+        *(static_cast<CBlockHeader*>(this)) = header;
     }
 
-    ADD_SERIALIZE_METHODS;
-
-    template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action) {
-        READWRITE(*(CBlockHeader*)this);
-        READWRITE(vtx);
+    SERIALIZE_METHODS(CBlock, obj)
+    {
+        READWRITEAS(CBlockHeader, obj);
+        READWRITE(obj.vtx);
     }
 
     void SetNull()
@@ -132,19 +165,14 @@ struct CBlockLocator
 
     CBlockLocator() {}
 
-    CBlockLocator(const std::vector<uint256>& vHaveIn)
+    explicit CBlockLocator(const std::vector<uint256>& vHaveIn) : vHave(vHaveIn) {}
+
+    SERIALIZE_METHODS(CBlockLocator, obj)
     {
-        vHave = vHaveIn;
-    }
-
-    ADD_SERIALIZE_METHODS;
-
-    template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action) {
         int nVersion = s.GetVersion();
         if (!(s.GetType() & SER_GETHASH))
             READWRITE(nVersion);
-        READWRITE(vHave);
+        READWRITE(obj.vHave);
     }
 
     void SetNull()
@@ -157,8 +185,5 @@ struct CBlockLocator
         return vHave.empty();
     }
 };
-
-/** Compute the consensus-critical block weight (see BIP 141). */
-int64_t GetBlockWeight(const CBlock& tx);
 
 #endif // BITCOIN_PRIMITIVES_BLOCK_H

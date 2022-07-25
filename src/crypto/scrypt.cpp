@@ -27,12 +27,21 @@
  * online backup system.
  */
 
+<<<<<<< HEAD
 #include "crypto/scrypt.h"
 #include "crypto/hmac_sha256.h"
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
 #include <openssl/sha.h>
+=======
+#include <crypto/scrypt.h>
+#include <crypto/hmac_sha256.h>
+
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+>>>>>>> 1.21-dev
 
 #if defined(USE_SSE2) && !defined(USE_SSE2_ALWAYS)
 #ifdef _MSC_VER
@@ -43,7 +52,10 @@
 #include <cpuid.h>
 #endif
 #endif
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1.21-dev
 #ifndef __FreeBSD__
 static inline uint32_t be32dec(const void *pp)
 {
@@ -62,6 +74,10 @@ static inline void be32enc(void *pp, uint32_t x)
 }
 
 #endif
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1.21-dev
 /**
  * PBKDF2_SHA256(passwd, passwdlen, salt, saltlen, c, buf, dkLen):
  * Compute PBKDF2(passwd, salt, c, dkLen) using HMAC-SHA256 as the PRF, and
@@ -119,6 +135,12 @@ PBKDF2_SHA256(const uint8_t *passwd, size_t passwdlen, const uint8_t *salt,
 
 #define ROTL(a, b) (((a) << (b)) | ((a) >> (32 - (b))))
 
+<<<<<<< HEAD
+=======
+#ifdef __clang__
+__attribute__((no_sanitize("unsigned-integer-overflow")))
+#endif // __clang__
+>>>>>>> 1.21-dev
 static inline void xor_salsa8(uint32_t B[16], const uint32_t Bx[16])
 {
 	uint32_t x00,x01,x02,x03,x04,x05,x06,x07,x08,x09,x10,x11,x12,x13,x14,x15;
@@ -222,10 +244,18 @@ void scrypt_1024_1_1_256_sp_generic(const char *input, char *output, char *scrat
 // By default, set to generic scrypt function. This will prevent crash in case when scrypt_detect_sse2() wasn't called
 void (*scrypt_1024_1_1_256_sp_detected)(const char *input, char *output, char *scratchpad) = &scrypt_1024_1_1_256_sp_generic;
 
+<<<<<<< HEAD
 void scrypt_detect_sse2()
 {
 #if defined(USE_SSE2_ALWAYS)
     printf("scrypt: using scrypt-sse2 as built.\n");
+=======
+std::string scrypt_detect_sse2()
+{
+    std::string ret;
+#if defined(USE_SSE2_ALWAYS)
+    ret = "scrypt: using scrypt-sse2 as built.";
+>>>>>>> 1.21-dev
 #else // USE_SSE2_ALWAYS
     // 32bit x86 Linux or Windows, detect cpuid features
     unsigned int cpuid_edx=0;
@@ -243,20 +273,35 @@ void scrypt_detect_sse2()
     if (cpuid_edx & 1<<26)
     {
         scrypt_1024_1_1_256_sp_detected = &scrypt_1024_1_1_256_sp_sse2;
+<<<<<<< HEAD
         printf("scrypt: using scrypt-sse2 as detected.\n");
+=======
+        ret = "scrypt: using scrypt-sse2 as detected";
+>>>>>>> 1.21-dev
     }
     else
     {
         scrypt_1024_1_1_256_sp_detected = &scrypt_1024_1_1_256_sp_generic;
+<<<<<<< HEAD
         printf("scrypt: using scrypt-generic, SSE2 unavailable.\n");
     }
 #endif // USE_SSE2_ALWAYS
+=======
+        ret = "scrypt: using scrypt-generic, SSE2 unavailable";
+    }
+#endif // USE_SSE2_ALWAYS
+    return ret;
+>>>>>>> 1.21-dev
 }
 #endif
 
 void scrypt_1024_1_1_256(const char *input, char *output)
 {
+<<<<<<< HEAD
     thread_local char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
     memset(scratchpad, 0, sizeof(scratchpad));
+=======
+    char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
+>>>>>>> 1.21-dev
     scrypt_1024_1_1_256_sp(input, output, scratchpad);
 }

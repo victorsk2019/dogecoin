@@ -1,13 +1,23 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
+<<<<<<< HEAD
 // Copyright (c) 2009-2013 The Bitcoin developers
+=======
+// Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2021 The Dogecoin developers
+>>>>>>> 1.21-dev
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_PRIMITIVES_PUREHEADER_H
 #define BITCOIN_PRIMITIVES_PUREHEADER_H
 
+<<<<<<< HEAD
 #include "serialize.h"
 #include "uint256.h"
+=======
+#include <serialize.h>
+#include <uint256.h>
+>>>>>>> 1.21-dev
 
 /**
  * A block header without auxpow information.  This "intermediate step"
@@ -18,13 +28,25 @@
  */
 class CPureBlockHeader
 {
+<<<<<<< HEAD
 public:
     /* Modifiers to the version.  */
     static const int32_t VERSION_AUXPOW = (1 << 8);
+=======
+private:
+>>>>>>> 1.21-dev
 
     /** Bits above are reserved for the auxpow chain ID.  */
     static const int32_t VERSION_CHAIN_START = (1 << 16);
 
+<<<<<<< HEAD
+=======
+public:
+
+    /* Modifiers to the version.  */
+    static const int32_t VERSION_AUXPOW = (1 << 8);
+
+>>>>>>> 1.21-dev
     // header
     int32_t nVersion;
     uint256 hashPrevBlock;
@@ -38,6 +60,7 @@ public:
         SetNull();
     }
 
+<<<<<<< HEAD
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
@@ -50,6 +73,9 @@ public:
         READWRITE(nBits);
         READWRITE(nNonce);
     }
+=======
+    SERIALIZE_METHODS(CPureBlockHeader, obj) { READWRITE(obj.nVersion, obj.hashPrevBlock, obj.hashMerkleRoot, obj.nTime, obj.nBits, obj.nNonce); }
+>>>>>>> 1.21-dev
 
     void SetNull()
     {
@@ -67,7 +93,10 @@ public:
     }
 
     uint256 GetHash() const;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1.21-dev
     uint256 GetPoWHash() const;
 
     int64_t GetBlockTime() const
@@ -124,7 +153,11 @@ public:
 
     /**
      * Check if the auxpow flag is set in the version.
+<<<<<<< HEAD
      * @return True if this block version is marked as auxpow.
+=======
+     * @return True iff this block version is marked as auxpow.
+>>>>>>> 1.21-dev
      */
     inline bool IsAuxpow() const
     {
@@ -145,7 +178,11 @@ public:
 
     /**
      * Check whether this is a "legacy" block without chain ID.
+<<<<<<< HEAD
      * @return True if it is.
+=======
+     * @return True iff it is.
+>>>>>>> 1.21-dev
      */
     inline bool IsLegacy() const
     {

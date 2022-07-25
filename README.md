@@ -4,16 +4,26 @@ Dogecoin Core [DOGE, Ð]
 <img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="Dogecoin" width="300"/>
 </h1>
 
+<<<<<<< HEAD
 <div align="center">
 
 [![DogecoinBadge](https://img.shields.io/badge/Doge-Coin-yellow.svg)](https://dogecoin.com)
 [![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://dogecoin.com)
+=======
+https://bitcoincore.org
+>>>>>>> 1.21-dev
 
 </div>
 
 Select language: EN | [CN](./README_zh_CN.md)
 
+<<<<<<< HEAD
 Dogecoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogecoin Core software allows anyone to operate a node in the Dogecoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
+=======
+For more information, as well as an immediately usable, binary version of
+the Bitcoin Core software, see https://bitcoincore.org/en/download/, or read the
+[original whitepaper](https://bitcoincore.org/bitcoin.pdf).
+>>>>>>> 1.21-dev
 
 For information about the default fees used on the Dogecoin network, please
 refer to the [fee recommendation](doc/fee-recommendation.md).
@@ -22,6 +32,7 @@ refer to the [fee recommendation](doc/fee-recommendation.md).
 
 ## Usage 💻
 
+<<<<<<< HEAD
 To start your journey with Dogecoin Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
 The JSON-RPC API provided by Dogecoin Core is self-documenting and can be browsed with `dogecoin-cli help`, while detailed information for each command can be viewed with `dogecoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
@@ -33,6 +44,19 @@ is needed to synchronize the "mainnet" blockchain and stay informed of new
 transactions and blocks. Additionally, a JSONRPC port can be opened, which
 defaults to port `22555` for mainnet nodes. It is strongly recommended to not
 expose RPC ports to the public internet.
+=======
+The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
+completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
+regularly from release branches to indicate new official, stable release versions of Bitcoin Core.
+
+The https://github.com/bitcoin-core/gui repository is used exclusively for the
+development of the GUI. Its master branch is identical in all monotree
+repositories. Release branches and tags do not exist, so please do not fork
+that repository unless it is for development reasons.
+
+The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
+and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
+>>>>>>> 1.21-dev
 
 | Function | mainnet | testnet | regtest |
 | :------- | ------: | ------: | ------: |
@@ -47,6 +71,7 @@ software.
 
 Main development resources:
 
+<<<<<<< HEAD
 * [Github Projects](https://github.com/dogecoin/dogecoin/projects) is used to
   follow planned and in-progress work for upcoming releases.
 * [Github Discussion](https://github.com/dogecoin/dogecoin/discussions) is used
@@ -56,6 +81,13 @@ Main development resources:
 
 ### Version strategy
 Version numbers are following ```major.minor.patch``` semantics.
+=======
+There are also [regression and integration tests](/test), written
+in Python, that are run automatically on the build server.
+These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
+
+The Travis CI system makes sure that every pull request is built for Windows, Linux, and macOS, and that unit/sanity tests are run automatically.
+>>>>>>> 1.21-dev
 
 ### Branches
 There are 3 types of branches in this repository:
@@ -69,7 +101,12 @@ There are 3 types of branches in this repository:
 *submitted against those. Maintenance branches are there for **bug fixes only,***
 *please submit new features against the development branch with the highest version.*
 
+<<<<<<< HEAD
 ## Contributing 🤝
+=======
+Changes to translations as well as new translations can be submitted to
+[Bitcoin Core's Transifex page](https://www.transifex.com/bitcoin/bitcoin/).
+>>>>>>> 1.21-dev
 
 If you find a bug or experience issues with this software, please report it
 using the [issue system](https://github.com/dogecoin/dogecoin/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5Bbug%5D+).

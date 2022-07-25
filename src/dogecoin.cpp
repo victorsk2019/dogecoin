@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Copyright (c) 2015 The Dogecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -13,6 +14,23 @@
 #include "validation.h"
 #include "dogecoin-fees.h"
 
+=======
+// Copyright (c) 2015-2021 The Dogecoin Core developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#include <boost/random/mersenne_twister.hpp>
+#include <boost/random/uniform_int.hpp>
+
+#include <arith_uint256.h>
+#include <chain.h>
+#include <dogecoin.h>
+#include <logging.h>
+
+#ifdef __clang__
+__attribute__((no_sanitize("unsigned-integer-overflow")))
+#endif // __clang__
+>>>>>>> 1.21-dev
 int static generateMTRandom(unsigned int s, int range)
 {
     boost::mt19937 gen(s);
@@ -20,6 +38,42 @@ int static generateMTRandom(unsigned int s, int range)
     return dist(gen);
 }
 
+<<<<<<< HEAD
+=======
+CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, uint256 prevHash)
+{
+    int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
+
+    if (nHeight < 145000 && !consensusParams.fSimplifiedRewards)
+    {
+        // Old-style rewards derived from the previous block hash
+
+        // This extracts 7*4 bits out of the middle of the previous block hash to use as a seed.
+        // It's longer than the 1.14 code, but avoids the locale-sensitive strtol() function.
+        const int bitsPerNibble = 4;
+        const int totalNibbles = 256 / bitsPerNibble;
+        const int nibblesToClear = 7;
+        const int nibblesToKeep = 7;
+        arith_uint256 upperBits = UintToArith256(prevHash) << (nibblesToClear * bitsPerNibble);
+        arith_uint256 cleanedBits = upperBits >> ((totalNibbles - nibblesToKeep) * bitsPerNibble);
+        uint64_t seed = ArithToUint256(cleanedBits).GetUint64(0);
+
+        // Convert the seed into a subsidy value.
+        CAmount maxReward = (1000000 >> halvings) - 1;
+        int rand = generateMTRandom(seed, maxReward);
+
+        return (1 + rand) * COIN;
+    } else if (nHeight < (6 * consensusParams.nSubsidyHalvingInterval)) {
+        // New-style constant rewards for each halving interval
+        return (500000 * COIN) >> halvings;
+    } else {
+        // Constant inflation
+        return 10000 * COIN;
+    }
+}
+
+
+>>>>>>> 1.21-dev
 // Dogecoin: Normally minimum difficulty blocks can only occur in between
 // retarget blocks. However, once we introduce Digishield every block is
 // a retarget, so we need to handle minimum difficulty on all blocks.
@@ -40,6 +94,7 @@ bool AllowDigishieldMinDifficultyForBlock(const CBlockIndex* pindexLast, const C
 
 unsigned int CalculateDogecoinNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
+<<<<<<< HEAD
     int nHeight = pindexLast->nHeight + 1;
     const int64_t retargetTimespan = params.nPowTargetTimespan;
     const int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
@@ -70,21 +125,67 @@ unsigned int CalculateDogecoinNextWorkRequired(const CBlockIndex* pindexLast, in
         nModulatedTimespan = nMinTimespan;
     else if (nModulatedTimespan > nMaxTimespan)
         nModulatedTimespan = nMaxTimespan;
+=======
+    if (params.fPowNoRetargeting)
+        return pindexLast->nBits;
+
+    int nHeight = pindexLast->nHeight + 1;
+    bool fNewDifficultyProtocol = (nHeight >= 145000);
+    // bool fNewDifficultyProtocol = (nHeight >= params.GetDigiShieldForkBlock());
+    const int64_t nRetargetTimespan = fNewDifficultyProtocol
+                             ? 60 // params.DigiShieldTargetTimespan()
+                             : params.nPowTargetTimespan;
+
+    int64_t nTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
+    int64_t nMaxTimespan;
+    int64_t nMinTimespan;
+
+    if (fNewDifficultyProtocol) //DigiShield implementation - thanks to RealSolid & WDC for this code
+    {
+        // amplitude filter - thanks to daft27 for this code
+        nTimespan = nRetargetTimespan + (nTimespan - nRetargetTimespan) / 8;
+
+        nMinTimespan = nRetargetTimespan - (nRetargetTimespan / 4);
+        nMaxTimespan = nRetargetTimespan + (nRetargetTimespan / 2);
+    } else if (nHeight > 10000) {
+        nMinTimespan = nRetargetTimespan / 4;
+        nMaxTimespan = nRetargetTimespan * 4;
+    } else if (nHeight > 5000) {
+        nMinTimespan = nRetargetTimespan / 8;
+        nMaxTimespan = nRetargetTimespan * 4;
+    } else {
+        nMinTimespan = nRetargetTimespan / 16;
+        nMaxTimespan = nRetargetTimespan * 4;
+    }
+
+    // Limit adjustment step
+    if (nTimespan < nMinTimespan)
+        nTimespan = nMinTimespan;
+    else if (nTimespan > nMaxTimespan)
+        nTimespan = nMaxTimespan;
+>>>>>>> 1.21-dev
 
     // Retarget
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     arith_uint256 bnNew;
+<<<<<<< HEAD
     arith_uint256 bnOld;
     bnNew.SetCompact(pindexLast->nBits);
     bnOld = bnNew;
     bnNew *= nModulatedTimespan;
     bnNew /= retargetTimespan;
+=======
+    bnNew.SetCompact(pindexLast->nBits);
+    bnNew *= nTimespan;
+    bnNew /= nRetargetTimespan;
+>>>>>>> 1.21-dev
 
     if (bnNew > bnPowLimit)
         bnNew = bnPowLimit;
 
     return bnNew.GetCompact();
 }
+<<<<<<< HEAD
 
 bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& params)
 {
@@ -148,3 +249,5 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
 }
 
 
+=======
+>>>>>>> 1.21-dev

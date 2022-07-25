@@ -1,7 +1,11 @@
 // Copyright 2014 BitPay Inc.
 // Copyright 2015 Bitcoin Core Developers
 // Distributed under the MIT software license, see the accompanying
+<<<<<<< HEAD
 // file COPYING or https://opensource.org/licenses/mit-license.php.
+=======
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+>>>>>>> 1.21-dev
 
 #include <stdint.h>
 #include <errno.h>
@@ -11,7 +15,10 @@
 #include <vector>
 #include <limits>
 #include <string>
+<<<<<<< HEAD
 #include <sstream>
+=======
+>>>>>>> 1.21-dev
 
 #include "univalue.h"
 
@@ -32,7 +39,11 @@ bool ParseInt32(const std::string& str, int32_t *out)
 {
     if (!ParsePrechecks(str))
         return false;
+<<<<<<< HEAD
     char *endp = nullptr;
+=======
+    char *endp = NULL;
+>>>>>>> 1.21-dev
     errno = 0; // strtol will not set errno if valid
     long int n = strtol(str.c_str(), &endp, 10);
     if(out) *out = (int32_t)n;
@@ -48,7 +59,11 @@ bool ParseInt64(const std::string& str, int64_t *out)
 {
     if (!ParsePrechecks(str))
         return false;
+<<<<<<< HEAD
     char *endp = nullptr;
+=======
+    char *endp = NULL;
+>>>>>>> 1.21-dev
     errno = 0; // strtoll will not set errno if valid
     long long int n = strtoll(str.c_str(), &endp, 10);
     if(out) *out = (int64_t)n;

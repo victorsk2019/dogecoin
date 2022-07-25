@@ -38,6 +38,7 @@
         <translation>Билдирүүнү &amp;текшерүү...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Dogecoin</source>
         <translation>Dogecoin</translation>
     </message>
@@ -46,6 +47,8 @@
         <translation>Капчык</translation>
     </message>
     <message>
+=======
+>>>>>>> 1.21-dev
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
@@ -69,6 +72,10 @@
         <source>Up to date</source>
         <translation>Жаңыланган</translation>
     </message>
+    <message>
+        <source>&amp;Window</source>
+        <translation>&amp;Терезе</translation>
+    </message>
     </context>
 <context>
     <name>CoinControlDialog</name>
@@ -79,6 +86,16 @@
     <message>
         <source>(no label)</source>
         <translation>(аты жок)</translation>
+    </message>
+    </context>
+<context>
+    <name>CreateWalletActivity</name>
+    </context>
+<context>
+    <name>CreateWalletDialog</name>
+    <message>
+        <source>Wallet</source>
+        <translation>Капчык</translation>
     </message>
     </context>
 <context>
@@ -101,6 +118,10 @@
 <context>
     <name>Intro</name>
     <message>
+        <source>Bitcoin</source>
+        <translation>Bitcoin</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Ката</translation>
     </message>
@@ -112,11 +133,10 @@
     <name>OpenURIDialog</name>
     </context>
 <context>
+    <name>OpenWalletActivity</name>
+    </context>
+<context>
     <name>OptionsDialog</name>
-    <message>
-        <source>MB</source>
-        <translation>МБ</translation>
-    </message>
     <message>
         <source>&amp;Network</source>
         <translation>&amp;Тармак</translation>
@@ -149,9 +169,16 @@
         <source>none</source>
         <translation>жок</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation>Ката</translation>
+    </message>
     </context>
 <context>
     <name>OverviewPage</name>
+    </context>
+<context>
+    <name>PSBTOperationsDialog</name>
     </context>
 <context>
     <name>PaymentServer</name>
@@ -161,9 +188,6 @@
     </context>
 <context>
     <name>QObject</name>
-    </context>
-<context>
-    <name>QObject::QObject</name>
     </context>
 <context>
     <name>QRImageWidget</name>
@@ -209,12 +233,8 @@
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
-        <source>Address</source>
-        <translation>Дарек</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>Билдирүү</translation>
+        <source>Message:</source>
+        <translation>Билдирүү:</translation>
     </message>
     </context>
 <context>
@@ -259,9 +279,6 @@
     </message>
     </context>
 <context>
-    <name>SendConfirmationDialog</name>
-    </context>
-<context>
     <name>ShutdownWindow</name>
     </context>
 <context>
@@ -276,17 +293,10 @@
     </message>
     </context>
 <context>
-    <name>SplashScreen</name>
-    </context>
-<context>
     <name>TrafficGraphWidget</name>
     </context>
 <context>
     <name>TransactionDesc</name>
-    <message>
-        <source>%1/offline</source>
-        <translation>%1/тармакта эмес</translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Дата</translation>
@@ -325,6 +335,9 @@
     <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
+    <name>WalletController</name>
+    </context>
+<context>
     <name>WalletFrame</name>
     </context>
 <context>
@@ -332,20 +345,12 @@
     </context>
 <context>
     <name>WalletView</name>
-    </context>
-<context>
-    <name>bitcoin-core</name>
-    <message>
-        <source>Information</source>
-        <translation>Маалымат</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Эскертүү</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Ката</translation>
     </message>
-</context>
+    </context>
+<context>
+    <name>bitcoin-core</name>
+    </context>
 </TS>

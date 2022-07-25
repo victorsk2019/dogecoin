@@ -7,11 +7,19 @@ The purpose of this library is to make the verification functionality that is cr
 
 ### API
 
+<<<<<<< HEAD
 The interface is defined in the C header `dogecoinconsensus.h` located in  `src/script/dogecoinconsensus.h`.
 
 #### Version
 
 `dogecoinconsensus_version` returns an `unsigned int` with the API version *(currently at an experimental `0`)*.
+=======
+The interface is defined in the C header `bitcoinconsensus.h` located in `src/script/bitcoinconsensus.h`.
+
+#### Version
+
+`bitcoinconsensus_version` returns an `unsigned int` with the API version *(currently `1`)*.
+>>>>>>> 1.21-dev
 
 #### Script Validation
 

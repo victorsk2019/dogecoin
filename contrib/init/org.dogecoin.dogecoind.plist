@@ -6,8 +6,12 @@
 	<string>org.dogecoin.dogecoind</string>
 	<key>ProgramArguments</key>
 	<array>
+<<<<<<< HEAD:contrib/init/org.dogecoin.dogecoind.plist
 		<string>/usr/local/bin/dogecoind</string>
 		<string>-daemon</string>
+=======
+		<string>/usr/local/bin/bitcoind</string>
+>>>>>>> 1.21-dev:contrib/init/org.bitcoin.bitcoind.plist
 	</array>
 	<key>RunAtLoad</key>
 	<true/>

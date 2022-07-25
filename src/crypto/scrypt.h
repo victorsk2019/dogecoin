@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 #ifndef SCRYPT_H
 #define SCRYPT_H
+=======
+#ifndef BITCOIN_CRYPTO_SCRYPT_H
+#define BITCOIN_CRYPTO_SCRYPT_H
+
+>>>>>>> 1.21-dev
 #include <stdlib.h>
 #include <stdint.h>
 
@@ -9,6 +15,10 @@ void scrypt_1024_1_1_256(const char *input, char *output);
 void scrypt_1024_1_1_256_sp_generic(const char *input, char *output, char *scratchpad);
 
 #if defined(USE_SSE2)
+<<<<<<< HEAD
+=======
+#include <string>
+>>>>>>> 1.21-dev
 #if defined(_M_X64) || defined(__x86_64__) || defined(_M_AMD64) || (defined(MAC_OSX) && defined(__i386__))
 #define USE_SSE2_ALWAYS 1
 #define scrypt_1024_1_1_256_sp(input, output, scratchpad) scrypt_1024_1_1_256_sp_sse2((input), (output), (scratchpad))
@@ -16,7 +26,11 @@ void scrypt_1024_1_1_256_sp_generic(const char *input, char *output, char *scrat
 #define scrypt_1024_1_1_256_sp(input, output, scratchpad) scrypt_1024_1_1_256_sp_detected((input), (output), (scratchpad))
 #endif
 
+<<<<<<< HEAD
 void scrypt_detect_sse2();
+=======
+std::string scrypt_detect_sse2();
+>>>>>>> 1.21-dev
 void scrypt_1024_1_1_256_sp_sse2(const char *input, char *output, char *scratchpad);
 extern void (*scrypt_1024_1_1_256_sp_detected)(const char *input, char *output, char *scratchpad);
 #else
@@ -44,4 +58,8 @@ static inline void le32enc(void *pp, uint32_t x)
         p[3] = (x >> 24) & 0xff;
 }
 #endif
+<<<<<<< HEAD
 #endif
+=======
+#endif // BITCOIN_CRYPTO_SCRYPT_H
+>>>>>>> 1.21-dev

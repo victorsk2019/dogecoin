@@ -1,0 +1,610 @@
+[
+    [
+        "DQJGYYQM1ZnE5sUUyYBueoveP3w8yxPG4k",
+        "76a914d2267c36db57d210e8c2b7076fabc8a9046829d388ac",
+        {
+            "chain": "main",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "AFXs4rsfq2nX4nQ1V6hLtSdHoiG4dLwb28",
+        "a914fd59b141c0f4680a931f0f158e3443443a74f11a87",
+        {
+            "chain": "main",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "nrL2cqMJZBQekmSjny9aVxdB4r978ZE1sn",
+        "76a914f2cfb67be0388783b698ca34d2083700a720670a88ac",
+        {
+            "chain": "test",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "2NCs27SU1ZQRoEuYK7ou1AQ94qJ2LhRL7pr",
+        "a914d72f734e2a82475f7470118fd4bde4fc7ac9fbff87",
+        {
+            "chain": "test",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "ngS777qczdLmyhbMYCELEKadW5bVZAiVAZ",
+        "76a9148644b2661c14d6457eec334333ab664c5421528588ac",
+        {
+            "chain": "signet",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "2MtLcrptQ2gyiDPUaHSAeKLqD8gYEm1SmTn",
+        "a9140bfd4c35b50be1f1baf5e5a5b5fe35f52a7af50e87",
+        {
+            "chain": "signet",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "nUrkqPvkfifrUGZcCJCWP7KAQ1zF5f6drB",
+        "76a914074caa41b23698d1d3132481796fe9d97e77261c88ac",
+        {
+            "chain": "regtest",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "2Mxi5qGr7TRWqwqWZdmxmuW3qocnrmAq2Gs",
+        "a9143bed0d59a973fd659f2c9065e8b75ed5cfff9fdd87",
+        {
+            "chain": "regtest",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "6JVy3Wy4mY1L4RkrNooszHRnRuzvBP91e3NhUTGDTV4pj7MhsUZ",
+        "30790398a381ab285a67a30953ca14ba77c31ef89655e3cf136ab8595681c68e",
+        {
+            "chain": "main",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "QTYHeTsERBSqAJpGM4t7cYTZtNyA63TxQTzihAeWfVDiXuA1eiLB",
+        "92f45fc4a59256b8ded5908e164dc27b57db35abf75214c58d42c239ab9a06c7",
+        {
+            "chain": "main",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "96RsvEGGKRbagWQXJcNKCaSrY3pfMkeEWZx6ECjP56ei7HEd5hQ",
+        "7df4fdfc142e9aabc84b04a33dd0c8e4b88fe99467755b8a55d263c60f3f06b9",
+        {
+            "chain": "test",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "cgDngLy8ZH5p79Phk8zjbF1H3iKioSJibVLU19xuAyHbQLM1cgtt",
+        "2c26e6cd28ecb7c66dfd7f9ffdaac1b24a753524efb660bed8345a832073fdcb",
+        {
+            "chain": "test",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "96Eau9asP6XNL2BVbowpoqv2zVGepQe8ExAeXqJpwVAShUkvfAW",
+        "64505ba15e3df686824598823c1915030bfa420a3f39ea7bc0af37afa0813671",
+        {
+            "chain": "signet",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "cjXsoeppAwttvzt6dZvMjDnShoYdMF9GBy8wsj6n3hKeUzCYZThs",
+        "8ef830ea3675ed0ef56d9b2936c2bf5bc182c1706a3f5a78c805c990566b4b2c",
+        {
+            "chain": "signet",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "9641MXEQd6PaNMTVKFMkYMyhGoRARQ7pKrC59n2JpP5RoDv8f8U",
+        "4c4b5f383af0b3ef9a4e65ae07317d2aef4919d99132f092437826d4c448e8c0",
+        {
+            "chain": "regtest",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "chV98CmfhoPJz2qosNHi7pLnTyqpvWjDJtuWepsbZgQXabRwWHBL",
+        "51e3242c8b99ba4b7b79f126a2b8f661a6ba7651f09207118a16faeb68005259",
+        {
+            "chain": "regtest",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "doge1qqcnwcd4xr5a77t0mk204q3yhvle6snrxkhx43x",
+        "00140626ec36a61d3bef2dfbb29f50449767f3a84c66",
+        {
+            "chain": "main",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "doge1q8xlwsyuvyn8sqly3420mp3kfdg2vthpvwk72vkq9vjaru7eq4q7qj4zjax",
+        "002039bee8138c24cf007c91aa9fb0c6c96a14c5dc2c75bca6580564ba3e7b20a83c",
+        {
+            "chain": "main",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "doge1p4vzke7hvtxxxcyt0hf6gjf58e3uyygeewhaus3cnaupemh5c9h7speg57n",
+        "5120ab056cfaec598c6c116fba74892687cc7842233975fbc84713ef039dde982dfd",
+        {
+            "chain": "main",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "doge1z3hgs3knjs9",
+        "52028dd1",
+        {
+            "chain": "main",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1q95mr0xgm97hq88thq0sxh0xxtw4gs8yqurv730",
+        "00142d3637991b2fae039d7703e06bbcc65baa881c80",
+        {
+            "chain": "test",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1qqxaf798upjzxnqqcacmqhaamx43ehnwxdp0nq0sctmf70z7rpa5suk8u73",
+        "002001ba9f14fc0c84698018ee360bf7bb35639bcdc6685f303e185ed3e78bc30f69",
+        {
+            "chain": "test",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1pg5pdyq4ytf2dzzfnh8m3qgyssaesx6cey5390922c08ccsadt4lse48axw",
+        "51204502d202a45a54d10933b9f71020908773036b19252257954ac3cf8c43ad5d7f",
+        {
+            "chain": "test",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1ryz7kk0ytqxlycn0lqkdxgkmq6s4s22vj",
+        "531020bd6b3c8b01be4c4dff059a645b60d4",
+        {
+            "chain": "test",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1qufkehscwgyfxr2ct6qzcx5mjpgwfkkv0rgwcvv",
+        "0014e26d9bc30e411261ab0bd0058353720a1c9b598f",
+        {
+            "chain": "signet",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1qpcqc5rqf95paxvl7wchw5gqd8sl369m8fslx4zdpu9et3pa5jnaqc9gm4c",
+        "00200e018a0c092d03d333fe762eea200d3c3f1d17674c3e6a89a1e172b887b494fa",
+        {
+            "chain": "signet",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1pwrm7cl0hc8evgnwty9ztlegn7k0aj2x5pfn7pjp5km0qqsmsdhksefcq6l",
+        "512070f7ec7df7c1f2c44dcb2144bfe513f59fd928d40a67e0c834b6de0043706ded",
+        {
+            "chain": "signet",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1ru05y4fmkp7nydz0zelpan6a4gvrv3y4l22gq2fee23fukt0e37ssh34pz0",
+        "5320e3e84aa7760fa64689e2cfc3d9ebb54306c892bf52900527395453cb2df98fa1",
+        {
+            "chain": "signet",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "dcrt1qdpkdv5ww9zgpncavquh280azp3jym0hawk35ev",
+        "0014686cd651ce289019e3ac072ea3bfa20c644dbefd",
+        {
+            "chain": "regtest",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "dcrt1q8j2hrr5j6gw9esjxakf0phevavfa8luhcn39ftjnypremydt2hqslhp0dh",
+        "00203c95718e92d21c5cc246ed92f0df2ceb13d3ff97c4e254ae5320479d91ab55c1",
+        {
+            "chain": "regtest",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "dcrt1p2qvl0c9hykt0ys54ypwup0k9ev8ktzjffyfx3n8lx7958n7lse4qjr8h57",
+        "51205019f7e0b72596f24295205dc0bec5cb0f658a49491268ccff378b43cfdf866a",
+        {
+            "chain": "regtest",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "dcrt1s5uch4kd2y677s9m9d27aegjs54kmptp372mjk40yfqdvd88axmsg8c5pzfxcucnyucy3zc",
+        "6028a7317ad9aa26bde817656abddca250a56db0ac31f2b72b55e4481ac69cfd36e083e281124d8e6264",
+        {
+            "chain": "regtest",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "DCSxr7KqjN6xPFVfG1zz6g9XREFK7uQFVS",
+        "76a9145029f25845dd18117037dea0a808b6222dc1cfe288ac",
+        {
+            "chain": "main",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "ABNkUJ1kFDMGawuVRKFm1n9MLSrXQK25Rs",
+        "a914cfbff0880515852cd4d3a74e080657435ab47a2687",
+        {
+            "chain": "main",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "nbwhqTZHjVacvTzkCFdph9voS17To73r1p",
+        "76a91455051f3a8d7d7d6cc174be496c6e7908b004a09488ac",
+        {
+            "chain": "test",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "2MweAqohGBvFNAMVG4Yc4XiwHscYsnHaCsN",
+        "a914303771a78d0a14cc1bf6f60411ebfe6975a44e3a87",
+        {
+            "chain": "test",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "niy9eR75oDTKQaXijuNyzzaxRrgNWz65AZ",
+        "76a914a213f6957224f545d298531221cb0348ff5d981f88ac",
+        {
+            "chain": "signet",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "2NFoAaianZFyevgsPU5mAh8UDdxEtG8rwE6",
+        "a914f75d3c0cf79d5f62bee4f8b08392d8d08627aef187",
+        {
+            "chain": "signet",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "noi4fwj2jvpZL77mKYD8RLuVW5VemP18vd",
+        "76a914d612336ee0b51b34066aa099ae00041b2d84e74688ac",
+        {
+            "chain": "regtest",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "2N6XCRiDt19KNN2ePjPi7B6mKFkWDBYesfB",
+        "a914919efcadb0d1eec6e943448196098d98b611db5087",
+        {
+            "chain": "regtest",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "6KRTMFkdkZrpyvg3d7qRq3omu1B1d1E5JYKDBQTrdnQhXRS88s7",
+        "a9ec801c3d0d59b3a5465d5668845c4cc871d9b90c5514445f68b589753b13eb",
+        {
+            "chain": "main",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "QNtEqETEzXsHzCrURg2ZnwFwWqUzns7Vgva9YCFyRdt1ZWSesSWy",
+        "080809bf2c87825f9986ef5dfa16e719f2b5fca3d316749694230ee2ce3874aa",
+        {
+            "chain": "main",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "95bJeZCJkP5S8LoHaG2V79AWfj7J9d3bwULZopYexBoTAi9tfG7",
+        "0faa2611bbce2c8bd8df398156a59344497b08655c19b5c950bd1d368df8edea",
+        {
+            "chain": "test",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "cmzxAzWo35yHVL98DmiPhFb63gpuapwFzQnQpJ3MQk7KrsKGaZjy",
+        "d892a68e0de53297e10e150ba66d90181751b717e8b30545b34b5451bda83a61",
+        {
+            "chain": "test",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "95i4QUeUPJwZ9VzjM8ZuZfqozKV8Nu4SnGNTqXh1pFWeyciQS3M",
+        "1f005cca1bb9f1309bedfb2f4d395b1bd03da5a1b90f328a4d723aed43427f54",
+        {
+            "chain": "signet",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "ckvomryb1rsuWRQFw4NgVWiMTGytyhV3MJP73FahYC4tU8ycWVvk",
+        "b89a6c15ed744d31dfb7aac66b19da4285e2611d7c7920cd9d3b84b8eeeb95fb",
+        {
+            "chain": "signet",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "96Bv4EUVBzzJdXvQWNwVvtLBNAbW5RddZmnB15TiN5QZzXeMCjf",
+        "5e40823f77d9fc40013d573d30575de4b3bbc3e86129a837d1b6c7b62a492360",
+        {
+            "chain": "regtest",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "cjQHFfNSvoN1Z9J5xgAYasiRxR9G16grtX7Bz1DfnY32S6GUuyN5",
+        "8b0fdd6759bfd3753bafb2b184a501937e245c14bf003eb2a875db7aac95f8a5",
+        {
+            "chain": "regtest",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "doge1qr9rvryzuvdnah367emwp8mxda36dss4xnak9vt",
+        "00141946c1905c6367dbc75ecedc13eccdec74d842a6",
+        {
+            "chain": "main",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "doge1qpjjyn75panmzp7jj6zx98g4x4nnl4chxp54lxuk9c7lrtvucgfzqpv3dha",
+        "00200ca449fa81ecf620fa52d08c53a2a6ace7fae2e60d2bf372c5c7be35b3984244",
+        {
+            "chain": "main",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "doge1pw0jfhkggl9mwyxl5lklc0vzqa75p88lgeh0nz8c3ntxjwwy5x78q9ana20",
+        "512073e49bd908f976e21bf4fdbf87b040efa8139fe8cddf311f119acd273894378e",
+        {
+            "chain": "main",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "doge1zzfesaqstj2",
+        "52021273",
+        {
+            "chain": "main",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1q0deqa67mv25hkfpxd4ykutd3fmwtvycawgl0cs",
+        "00147b720eebdb62a97b24266d496e2db14edcb6131d",
+        {
+            "chain": "test",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1qqvyc05f5cldwxd3h65fn06a6whg7e4js740s62hec57jndqyj54qxpc5xj",
+        "0020030987d134c7dae33637d51337ebba75d1ecd650f55f0d2af9c53d29b404952a",
+        {
+            "chain": "test",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1p76erljadjtcfw8ljqul2l08yeghmarkwmc7nu8uf9za7k5s5ctlqf8ta76",
+        "5120f6b23fcbad92f0971ff2073eafbce4ca2fbe8ecede3d3e1f8928bbeb5214c2fe",
+        {
+            "chain": "test",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1rdcsvamtacexqg2zvf0w7pvmuc5ygr9nz",
+        "53106e20ceed7dc64c04284c4bdde0b37cc5",
+        {
+            "chain": "test",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1q2mrc02592jntn4jtmms0szr33jn96axxrjwdlh",
+        "001456c787aa8554a6b9d64bdee0f808718ca65d74c6",
+        {
+            "chain": "signet",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1qdaq5rrzrg7rqxtdt6pkg39mcams4zxtgrdq3nhh28m2hszessq8qd6qxtd",
+        "00206f41418c434786032dabd06c889778eee15119681b4119deea3ed5780b30800e",
+        {
+            "chain": "signet",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1p7h8zr6umjw0jjhrm5zmuu40v6apkegq4wx0y0xpattezmjp9el0shfakvp",
+        "5120f5ce21eb9b939f295c7ba0b7ce55ecd7436ca015719e47983d5af22dc825cfdf",
+        {
+            "chain": "signet",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "tdge1rttj2ddnyjaguyzvkr5ujjul3e02d7hyrtnq6h3v0sw3jw86fd5xsm2qh67",
+        "53205ae4a6b6649751c209961d392973f1cbd4df5c835cc1abc58f83a3271f496d0d",
+        {
+            "chain": "signet",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "dcrt1qg6jyp7rvep0r757g96eskqhjawru84tj0ln4as",
+        "001446a440f86cc85e3f53c82eb30b02f2eb87c3d572",
+        {
+            "chain": "regtest",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "dcrt1q6e7j6s70paung4hasl8xse3py2xlkjfwnzt4sqgumt2ff0x9prgshppmj2",
+        "0020d67d2d43cf0f793456fd87ce686621228dfb492e989758011cdad494bcc508d1",
+        {
+            "chain": "regtest",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "dcrt1payzlt80az282y3u677uz57yy3qtl4j9wyyyezsdcwvw2das0z7mq9jazel",
+        "5120e905f59dfd128ea2479af7b82a78848817fac8ae21099141b8731ca6f60f17b6",
+        {
+            "chain": "regtest",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "dcrt1splr06psvrsn32370tw0lcyva0zgm0whsmphlcadcz0uq4sxr28cnr6wdafhfmr0nvk82ll",
+        "60280fc6fd060c1c271547cf5b9ffc119d7891b7baf0d86ffc75b813f80ac0c351f131e9cdea6e9d8df3",
+        {
+            "chain": "regtest",
+            "isPrivkey": false,
+            "tryCaseFlip": true
+        }
+    ],
+    [
+        "DHmmLiVr1gZGWiBjxKxdqftehQnERsQH6W",
+        "76a9148a90df9bcfb1ed309e5f89a7f0c37d96c6752fc688ac",
+        {
+            "chain": "main",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "A6wHDrXeQVEKxvW2aAu1vyNSQUvEjxtFsX",
+        "a9149f0e4a866adff1d223b70e7cfb90470f9640148387",
+        {
+            "chain": "main",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "nkqZScHXRcEEtxh4SffNGs3bsmUAZ8GPev",
+        "76a914b694c0585627235fa86e5673a18fd4b4460915bc88ac",
+        {
+            "chain": "test",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "2NBCH84yAeNHVqeDhjDKWB2gqvZ1aftVByd",
+        "a914c4e3a1ee7cd0c47a86c1bf55cfafa56b4b48429287",
+        {
+            "chain": "test",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "nhzu3ggbzgU7Qv8FdEv8qjHEdi1DrwRZkT",
+        "76a91497707b9ded50269f6b3d1aaaa3568b90434034f188ac",
+        {
+            "chain": "signet",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "2Myrz81A7G7R4sudB1sdakWFQv4Kb6UDs8p",
+        "a91448942760a81c16f355fa069e1f921b4425563d6287",
+        {
+            "chain": "signet",
+            "isPrivkey": false
+        }
+    ]
+]
