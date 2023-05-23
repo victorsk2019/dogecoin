@@ -6,10 +6,13 @@
 
 export LC_ALL=C.UTF-8
 
-export HOST=x86_64-apple-darwin22
+export HOST=x86_64-apple-darwin22.4.0
 export PIP_PACKAGES="zmq"
 export GOAL="install"
 export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
+export CC="/usr/bin/clang"
+export CXX="/usr/bin/clang++"
+export CXXFLAGS="-std=c++0x"
 export LDFLAGS="-L/opt/homebrew/Cellar/boost/1.81.0_1/lib"
 export CPPFLAGS="-I/opt/homebrew/Cellar/boost/1.81.0_1/include"
 export BITCOIN_CONFIG="--with-gui --enable-reduce-exports --with-boost-process BDB_LIBS='-L${BDB_PREFIX}/lib -ldb_cxx-5.3' BDB_CFLAGS='-I${BDB_PREFIX}/include'"
