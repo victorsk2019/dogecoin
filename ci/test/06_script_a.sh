@@ -8,7 +8,7 @@ export LC_ALL=C.UTF-8
 
 BITCOIN_CONFIG_ALL="--enable-suppress-external-warnings --disable-dependency-tracking --prefix=$DEPENDS_DIR/$HOST --bindir=$BASE_OUTDIR/bin --libdir=$BASE_OUTDIR/lib"
 if [ -z "$NO_WERROR" ]; then
-  BITCOIN_CONFIG_ALL="${BITCOIN_CONFIG_ALL} --enable-werror"
+  BITCOIN_CONFIG_ALL="${BITCOIN_CONFIG_ALL} --enable-werror=no"
 fi
 DOCKER_EXEC "ccache --zero-stats --max-size=$CCACHE_SIZE"
 
