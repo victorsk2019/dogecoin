@@ -10,7 +10,9 @@ export HOST=x86_64-apple-darwin22.4.0
 export PIP_PACKAGES="zmq"
 export GOAL="install"
 export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
-export CXXFLAGS="-std=c++14"
+
+export CC="gcc"
+export CFLAGS="-O2 -fvisibility=hidden -std=c89 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wundef -Wno-unused-function -Wno-long-long -Wno-overlength-strings -W -g"
 ##
 # export LDFLAGS="-L/opt/homebrew/Cellar/boost/1.81.0_1/lib"
 # export CPPFLAGS="-I/opt/homebrew/Cellar/boost/1.81.0_1/include"
