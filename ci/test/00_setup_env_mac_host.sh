@@ -11,7 +11,7 @@ export PIP_PACKAGES="zmq"
 export GOAL="install"
 export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
 
-export CFLAGS="-Wno-error"
+# export CFLAGS=""
 ##
 # export LDFLAGS="-L/opt/homebrew/Cellar/boost/1.81.0_1/lib"
 # export CPPFLAGS="-I/opt/homebrew/Cellar/boost/1.81.0_1/include"
