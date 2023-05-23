@@ -11,8 +11,7 @@ export PIP_PACKAGES="zmq"
 export GOAL="install"
 export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
 
-export CC="gcc -ansi -pedantic-errors"
-export CFLAGS="-O2 -fvisibility=hidden -std=c99 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wundef -Wno-unused-function -Wno-long-long -Wno-overlength-strings -W -g"
+export CFLAGS="-Wno-error"
 ##
 # export LDFLAGS="-L/opt/homebrew/Cellar/boost/1.81.0_1/lib"
 # export CPPFLAGS="-I/opt/homebrew/Cellar/boost/1.81.0_1/include"
@@ -25,4 +24,4 @@ export CCACHE_SIZE=300M
 export RUN_SECURITY_TESTS="true"
 
 # Compiler for Mac native warns on C99 in dependencies.
-export NO_WERROR=1
+# export NO_WERROR=1
