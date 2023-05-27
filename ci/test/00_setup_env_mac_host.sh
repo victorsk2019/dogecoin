@@ -15,7 +15,7 @@ export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
 ##
 # export LDFLAGS="-L/opt/homebrew/Cellar/boost/1.81.0_1/lib"
 # export CPPFLAGS="-I/opt/homebrew/Cellar/boost/1.81.0_1/include"
-export BITCOIN_CONFIG="--disable-wallet"
+export BITCOIN_CONFIG="--with-gui=no --disable-wallet --with-boost=no"
 #export BITCOIN_CONFIG="--enable-reduce-exports=no --with-boost=no --with-gui=no BDB_LIBS='-L${BDB_PREFIX}/lib -ldb_cxx-5.3' BDB_CFLAGS='-I${BDB_PREFIX}/include'"
 export CI_OS_NAME="macos"
 export NO_DEPENDS=1
