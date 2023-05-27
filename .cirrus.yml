@@ -139,6 +139,7 @@ task:
   brew_install_script:
     - brew update
     - brew install coreutils gcc boost libevent qt@5 miniupnpc ccache zeromq qrencode sqlite libtool automake pkg-config gnu-getopt
+    - brew remove llvm 
   << : *GLOBAL_TASK_TEMPLATE
   macos_instance:
     # Use latest image, but hardcode version to avoid silent upgrades (and breaks)
