@@ -142,7 +142,7 @@ task:
   << : *GLOBAL_TASK_TEMPLATE
   macos_instance:
     # Use latest image, but hardcode version to avoid silent upgrades (and breaks)
-    image: ghcr.io/cirruslabs/macos-ventura-base:latest # https://cirrus-ci.org/guide/macOS
+    image: ghcr.io/cirruslabs/macos-ventura-xcode:14.3 # https://cirrus-ci.org/guide/macOS
   env:
     DANGER_RUN_CI_ON_HOST: "true"
     CI_USE_APT_INSTALL: "no"
