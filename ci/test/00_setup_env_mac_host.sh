@@ -6,9 +6,6 @@
 
 export LC_ALL=C.UTF-8
 
-sudo ln -s $(which g++-13) $(which g++) 
-sudo ln -s $(which gcc-13) $(which gcc) 
-
 export HOST=x86_64-apple-darwin22.4.0
 export PIP_PACKAGES="zmq"
 export GOAL="install"
