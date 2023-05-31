@@ -13,8 +13,8 @@ export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
 
 # export CFLAGS=""
 ##
-export CXX="gcc"
-export CC="gcc"
+#export CXX="gcc"
+#export CC="gcc"
 export LDFLAGS="-L/opt/homebrew/Cellar/boost/1.81.0_1/lib"
 export CPPFLAGS="-I/opt/homebrew/Cellar/boost/1.81.0_1/include"
 export BITCOIN_CONFIG="--with-gui=no --disable-wallet"

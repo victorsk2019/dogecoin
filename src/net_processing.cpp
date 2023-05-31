@@ -31,6 +31,7 @@
 #include <util/system.h>
 #include <validation.h>
 
+#include <array>
 #include <memory>
 #include <typeinfo>
 
