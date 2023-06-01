@@ -138,7 +138,7 @@ task:
   name: 'macOS 13.3 native [GOAL: install] [GUI] [no depends]'
   brew_install_script:
     - brew update
-    - brew install coreutils gcc boost libevent qt@5 miniupnpc ccache zeromq qrencode sqlite libtool automake pkg-config gnu-getopt
+    - brew install coreutils boost libevent qt@5 miniupnpc ccache zeromq qrencode sqlite libtool automake pkg-config gnu-getopt
   << : *GLOBAL_TASK_TEMPLATE
   macos_instance:
     # Use latest image, but hardcode version to avoid silent upgrades (and breaks)
