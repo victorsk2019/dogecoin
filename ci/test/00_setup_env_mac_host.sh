@@ -14,7 +14,7 @@ export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
 ##
 export CXX="/usr/bin/clang++"
 export CC="/usr/bin/clang"
-export CPPFLAGS="-I/opt/homebrew/include"
+export CPPFLAGS="-I/opt/homebrew/Cellar/libevent/2.1.12/include"
 export CXXFLAGS="-std=c++0x"
 export LDFLAGS="-L/opt/homebrew/Cellar/boost/1.81.0_1/lib"
 export CPPFLAGS="-I/opt/homebrew/Cellar/boost/1.81.0_1/include"
