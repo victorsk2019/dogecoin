@@ -7,7 +7,6 @@
 export LC_ALL=C.UTF-8
 
 export HOST=x86_64-apple-darwin16
-#arm64-apple-darwin
 export PIP_PACKAGES="zmq"
 export GOAL="install"
 export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
