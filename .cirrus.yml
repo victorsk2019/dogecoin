@@ -147,4 +147,4 @@ task:
     DANGER_RUN_CI_ON_HOST: "true"
     CI_USE_APT_INSTALL: "no"
     PACKAGE_MANAGER_INSTALL: "echo"  # Nothing to do
-    FILE_ENV: "./ci/test/00_setup_env_mac_host.sh"
+    FILE_ENV: "./contrib/install_db5.sh ./ci/test/00_setup_env_mac_host.sh"

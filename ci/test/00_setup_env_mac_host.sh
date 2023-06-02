@@ -11,10 +11,10 @@ export HOST=x86_64-apple-darwin22.4.0
 export PIP_PACKAGES="zmq"
 export GOAL="install"
 #export BDB_PREFIX="/opt/homebrew/Cellar/berkeley-db/18.1.40_1"
-#export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
+export BDB_PREFIX="${BASE_ROOT_DIR}/db5"
 export CPPFLAGS="-I/opt/homebrew/Cellar/libevent/2.1.12/include"
 export LDFLAGS="-L/opt/homebrew/Cellar/boost/1.81.0_1/lib"
-export BITCOIN_CONFIG="--with-gui --enable-reduce-exports --with-boost='/opt/homebrew/Cellar/boost/1.81.0_1' --with-boost-process"
+export BITCOIN_CONFIG="--with-gui --enable-reduce-exports --with-boost='/opt/homebrew/Cellar/boost/1.81.0_1' --with-boost-process BDB_LIBS='-L${BDB_PREFIX}/lib -ldb_cxx-5.3' BDB_CFLAGS='-I${BDB_PREFIX}/include'"
 export CI_OS_NAME="macos"
 export NO_DEPENDS=1
 export OSX_SDK=""
