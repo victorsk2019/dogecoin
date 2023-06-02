@@ -1121,7 +1121,7 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
     #include <arm_neon.h>
     #include <sys/auxv.h>
   ]], [[
-    getauxval(AT_HWCAP);
+    getauxval1(AT_HWCAP);
   ]])],
  [ AC_MSG_RESULT(yes); HAVE_STRONG_GETAUXVAL=1 ],
  [ AC_MSG_RESULT(no); HAVE_STRONG_GETAUXVAL=0 ]
@@ -1129,10 +1129,10 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
 
 AC_MSG_CHECKING(for weak getauxval support in the compiler)
 AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
-    unsigned long getauxval(unsigned long type) __attribute__((weak));
+    unsigned long getauxval1(unsigned long type) __attribute__((weak));
     #define AT_HWCAP 16
   ]], [[
-    getauxval(AT_HWCAP);
+    getauxval1(AT_HWCAP);
   ]])],
  [ AC_MSG_RESULT(yes); HAVE_WEAK_GETAUXVAL=1 ],
  [ AC_MSG_RESULT(no); HAVE_WEAK_GETAUXVAL=0 ]
