@@ -64,12 +64,12 @@ class TestSecurityChecks(unittest.TestCase):
     def test_MACHO(self):
         source = 'test1.c'
         executable = 'test1'
-        cc = 'clang -mno-execute-only'
+        cc = 'clang'
         write_testcode(source)
 
-        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-flat_namespace','-fno-stack-protector']),
+        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-flat_namespace','-Wl,-execute','-fno-stack-protector']),
             (1, executable+': failed PIE NOUNDEFS NX LAZY_BINDINGS Canary'))
-        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-flat_namespace','-fstack-protector-all']),
+        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-flat_namespace','-Wl,-execute','-fstack-protector-all']),
             (1, executable+': failed PIE NOUNDEFS NX LAZY_BINDINGS'))
         self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-flat_namespace','-fstack-protector-all']),
             (1, executable+': failed PIE NOUNDEFS LAZY_BINDINGS'))
