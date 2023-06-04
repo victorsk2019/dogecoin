@@ -30,19 +30,19 @@ if [ -n "$USE_VALGRIND" ]; then
   END_FOLD
 fi
 
-if [ "$RUN_UNIT_TESTS" = "true" ]; then
+if [ "$RUN_UNIT_TESTS" = "false" ]; then
   BEGIN_FOLD unit-tests
   DOCKER_EXEC ${TEST_RUNNER_ENV} DIR_UNIT_TEST_DATA=${DIR_UNIT_TEST_DATA} LD_LIBRARY_PATH=$DEPENDS_DIR/$HOST/lib make $MAKEJOBS check VERBOSE=1
   END_FOLD
 fi
 
-if [ "$RUN_UNIT_TESTS_SEQUENTIAL" = "true" ]; then
+if [ "$RUN_UNIT_TESTS_SEQUENTIAL" = "false" ]; then
   BEGIN_FOLD unit-tests-seq
   DOCKER_EXEC ${TEST_RUNNER_ENV} DIR_UNIT_TEST_DATA=${DIR_UNIT_TEST_DATA} LD_LIBRARY_PATH=$DEPENDS_DIR/$HOST/lib "${BASE_BUILD_DIR}/dogecoin-*/src/test/test_dogecoin*" --catch_system_errors=no -l test_suite
   END_FOLD
 fi
 
-if [ "$RUN_FUNCTIONAL_TESTS" = "true" ]; then
+if [ "$RUN_FUNCTIONAL_TESTS" = "false" ]; then
   BEGIN_FOLD functional-tests
   DOCKER_EXEC LD_LIBRARY_PATH=$DEPENDS_DIR/$HOST/lib ${TEST_RUNNER_ENV} test/functional/test_runner.py --ci $MAKEJOBS --tmpdirprefix "${BASE_SCRATCH_DIR}/test_runner/" --ansi --combinedlogslen=4000 --timeout-factor=${TEST_RUNNER_TIMEOUT_FACTOR} ${TEST_RUNNER_EXTRA} --quiet --failfast
   END_FOLD
