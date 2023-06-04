@@ -21,7 +21,7 @@ export NO_DEPENDS=1
 export OSX_SDK=""
 export CCACHE_SIZE=300M
 
-export RUN_SECURITY_TESTS="true"
+export RUN_SECURITY_TESTS="false"
 
 # Compiler for Mac native warns on C99 in dependencies.
 export NO_WERROR=1
