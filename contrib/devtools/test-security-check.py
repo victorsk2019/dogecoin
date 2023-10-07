@@ -67,13 +67,17 @@ class TestSecurityChecks(unittest.TestCase):
         cc = 'clang'
         write_testcode(source)
 
-        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-flat_namespace','-fno-stack-protector']),
-            (1, executable+': failed NOUNDEFS LAZY_BINDINGS Canary'))
-        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-flat_namespace','-fstack-protector-all']),
-            (1, executable+': failed NOUNDEFS LAZY_BINDINGS'))
-        self.assertEqual(call_security_check(cc, source, executable, ['-fstack-protector-all']),
-            (1, executable+': failed LAZY_BINDINGS'))
-        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-bind_at_load','-fstack-protector-all']),
+        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-flat_namespace','-Wl,-allow_stack_execute','-fno-stack-protector']),
+            (1, executable+': failed PIE NOUNDEFS NX LAZY_BINDINGS Canary'))
+        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-flat_namespace','-Wl,-allow_stack_execute','-fstack-protector-all']),
+            (1, executable+': failed PIE NOUNDEFS NX LAZY_BINDINGS'))
+        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-flat_namespace','-fstack-protector-all']),
+            (1, executable+': failed PIE NOUNDEFS LAZY_BINDINGS'))
+        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-fstack-protector-all']),
+            (1, executable+': failed PIE LAZY_BINDINGS'))
+        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-no_pie','-Wl,-bind_at_load','-fstack-protector-all']),
+            (1, executable+': failed PIE'))
+        self.assertEqual(call_security_check(cc, source, executable, ['-Wl,-pie','-Wl,-bind_at_load','-fstack-protector-all']),
             (0, ''))
 
 if __name__ == '__main__':
